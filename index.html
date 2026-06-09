@@ -5,20 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CENEFA FCEE</title>
     <style>
-        /* Estilos críticos para asegurar visibilidad */
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            width: 100%;
-            background-color: #000; /* Fondo negro para LED */
-            overflow: hidden;
-        }
-        .tradingview-widget-container {
-            width: 100%;
-            height: 72px; /* Altura estándar para cintillos */
-        }
-    </style>
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 2944px;
+    height: 192px;
+    background-color: #000;
+    overflow: hidden;
+}
+
+/* Contenedor visible final */
+.tradingview-widget-container {
+    width: 2944px;
+    height: 192px;
+    overflow: hidden;
+}
+
+/* Contenedor interno con escala */
+.scale-wrapper {
+    width: 2944px;
+    height: 70px; /* altura real del widget */
+    transform: scaleY(2.75); /* 192 / 70 ≈ 2.75 */
+    transform-origin: top left;
+}
+
+.tradingview-widget-container__widget {
+    width: 100%;
+    height: 70px;
+}
+</style>
 </head>
 <body>
 
