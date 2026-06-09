@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cintillo LED Guatemala</title>
+    <style>
+        /* Estilos críticos para asegurar visibilidad */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            background-color: #000; /* Fondo negro para LED */
+            overflow: hidden;
+        }
+        .tradingview-widget-container {
+            width: 100%;
+            height: 72px; /* Altura estándar para cintillos */
+        }
+    </style>
+</head>
+<body>
+
+<div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <!-- Se usa el script oficial de TradingView -->
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+    {
+        "symbols": [
+            {
+                "proName": "FX_IDC:USDGTQ",
+                "title": "USD/GTQ (Dólar)"
+            },
+            {
+                "proName": "NASDAQ:AAPL",
+                "title": "Apple Inc."
+            },
+            {
+                "proName": "FX:EURUSD",
+                "title": "Euro/Dólar"
+            },
+            {
+                "description": "Bitcoin",
+                "proName": "BINANCE:BTCUSDT"
+            }
+        ],
+        "showSymbolLogo": true,
+        "colorTheme": "dark",
+        "isTransparent": false,
+        "displayMode": "adaptive",
+        "locale": "es"
+    }
+    </script>
+</div>
+
+</body>
+</html>
