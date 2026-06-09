@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CENEFA FCEE</title>
-    <style>
+    style>
 body, html {
     margin: 0;
     padding: 0;
@@ -14,24 +14,26 @@ body, html {
     overflow: hidden;
 }
 
-/* Contenedor visible final */
+/* Contenedor principal */
 .tradingview-widget-container {
+    position: absolute;
+    top: 0px; /* ≈ 10 cm hacia abajo */
+    left: 0;
     width: 2944px;
     height: 192px;
     overflow: hidden;
 }
 
-/* Contenedor interno con escala */
+/* Escalado (zoom) */
 .scale-wrapper {
-    width: 2944px;
-    height: 70px; /* altura real del widget */
-    transform: scaleY(2.75); /* 192 / 70 ≈ 2.75 */
-    transform-origin: top left;
+    transform: scale(2);
+    transform-origin: top;
+
 }
 
 .tradingview-widget-container__widget {
     width: 100%;
-    height: 70px;
+    height: 100%;
 }
 </style>
 </head>
