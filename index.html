@@ -1,33 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CENEFA FCEE</title>
-    <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=2944, initial-scale=1.0">
+<title>CENEFA FCEE</title>
+
+<style>
 body, html {
     margin: 0;
     padding: 0;
-    width: 1920px;
-    height: 1080px;
+    width: 2944px;
+    height: 192px;
     background-color: #000;
     overflow: hidden;
 }
 
 /* Contenedor principal */
 .tradingview-widget-container {
-    position: absolute;
-    top: 0px; /* ≈ 10 cm hacia abajo */
-    left: 0;
-    width: 1920px;
-    height: 1080px;
+    position: relative;
+    width: 2944px;
+    height: 192px;
+    overflow: hidden;
 }
 
-/* Escalado (zoom) */
+/* Escalado CONTROLADO */
 .scale-wrapper {
-    transform: scale(5);
-    transform-origin: center;
+    transform: scale(5); /* puedes ajustar entre 4 y 7 */
+    transform-origin: top left;
 
+    /* Compensación para que no se desborde */
+    width: calc(100% / 5);
+    height: calc(100% / 5);
 }
 
 .tradingview-widget-container__widget {
@@ -35,13 +38,20 @@ body, html {
     height: 100%;
 }
 </style>
+
 </head>
+
 <body>
 
 <div class="tradingview-widget-container">
-    <div class="tradingview-widget-container__widget"></div>
-    <!-- Se usa el script oficial de TradingView -->
-    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+
+    <div class="scale-wrapper">
+        <div class="tradingview-widget-container__widget"></div>
+    </div>
+
+    <script type="text/javascript"
+        src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js"
+        async>
     {
         "symbols": [
             {
@@ -68,7 +78,13 @@ body, html {
         "locale": "es"
     }
     </script>
+
 </div>
-<!-- prueba -->
+
+<!-- Zoom extra opcional (muy útil en pantallas LED) -->
+<script>
+    document.body.style.zoom = "150%"; 
+</script>
+
 </body>
 </html>
