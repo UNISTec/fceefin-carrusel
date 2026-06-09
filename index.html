@@ -2,35 +2,36 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=2944, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CENEFA FCEE</title>
 
 <style>
 body, html {
     margin: 0;
     padding: 0;
-    width: 2944px;
-    height: 192px;
+    width: 2944px; /* Definición exacta para el player de VNNOX */
+    height: 192px; 
     background-color: #000;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Contenedor principal */
 .tradingview-widget-container {
-    position: relative;
-    width: 2944px;
-    height: 192px;
-    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Escalado CONTROLADO */
 .scale-wrapper {
-    transform: scale(4); /* puedes ajustar entre 4 y 7 */
+    /* Escala 2.66 calculada: 192px pantalla / 72px widget = 2.666 */
+    transform: scale(2.666); 
     transform-origin: center;
-
-    /* Compensación para que no se desborde */
-    width: calc(100% / 4);
-    height: calc(100% / 4);
+    width: calc(100% / 2.666);
+    height: 72px; /* Altura estándar del widget Ticker Tape */
 }
 
 .tradingview-widget-container__widget {
@@ -56,19 +57,19 @@ body, html {
         "symbols": [
             {
                 "proName": "FX_IDC:USDGTQ",
-                "title": "USD/GTQ (Dólar)"
+                "title": "USD/GTQ"
             },
             {
                 "proName": "NASDAQ:AAPL",
-                "title": "Apple Inc."
+                "title": "Apple"
             },
             {
                 "proName": "FX:EURUSD",
-                "title": "Euro/Dólar"
+                "title": "EUR/USD"
             },
             {
-                "description": "Bitcoin",
-                "proName": "BINANCE:BTCUSDT"
+                "proName": "BINANCE:BTCUSDT",
+                "title": "Bitcoin"
             }
         ],
         "showSymbolLogo": true,
@@ -80,11 +81,6 @@ body, html {
     </script>
 
 </div>
-
-<!-- Zoom extra opcional (muy útil en pantallas LED) -->
-<script>
-    document.body.style.zoom = "150%"; 
-</script>
 
 </body>
 </html>
