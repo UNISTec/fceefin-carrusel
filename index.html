@@ -1,57 +1,32 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=2944, initial-scale=1.0">
-<title>CENEFA FCEE</title>
-
-<style>
-body, html {
-    margin: 0;
-    padding: 0;
-    width: 2944px;
-    height: 192px;
-    background-color: #000;
-    overflow: hidden;
-}
-
-/* Contenedor principal */
-.tradingview-widget-container {
-    position: relative;
-    width: 2944px;
-    height: 192px;
-    overflow: hidden;
-}
-
-/* Escalado CONTROLADO */
-.scale-wrapper {
-    transform: scale(5); /* puedes ajustar entre 4 y 7 */
-    transform-origin: top left;
-
-    /* Compensación para que no se desborde */
-    width: calc(100% / 5);
-    height: calc(100% / 5);
-}
-
-.tradingview-widget-container__widget {
-    width: 100%;
-    height: 100%;
-}
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cintillo LED Guatemala</title>
+    <style>
+        /* Estilos para asegurar pantalla completa exacta */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            background-color: #000; /* Fondo negro para LED */
+            overflow: hidden; /* Evita barras de desplazamiento */
+        }
+        
+        /* El contenedor ahora ocupará el 100% de la pantalla (2944x192) */
+        .tradingview-widget-container {
+            width: 100%;
+            height: 100%; 
+        }
+    </style>
 </head>
-
 <body>
 
 <div class="tradingview-widget-container">
-
-    <div class="scale-wrapper">
-        <div class="tradingview-widget-container__widget"></div>
-    </div>
-
-    <script type="text/javascript"
-        src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js"
-        async>
+    <div class="tradingview-widget-container__widget"></div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
     {
         "symbols": [
             {
@@ -67,24 +42,20 @@ body, html {
                 "title": "Euro/Dólar"
             },
             {
-                "description": "Bitcoin",
-                "proName": "BINANCE:BTCUSDT"
+                "proName": "BINANCE:BTCUSDT",
+                "title": "Bitcoin"
             }
         ],
         "showSymbolLogo": true,
         "colorTheme": "dark",
         "isTransparent": false,
         "displayMode": "adaptive",
-        "locale": "es"
+        "locale": "es",
+        "width": "100%",
+        "height": "100%"
     }
     </script>
-
 </div>
-
-<!-- Zoom extra opcional (muy útil en pantallas LED) -->
-<script>
-    document.body.style.zoom = "150%"; 
-</script>
 
 </body>
 </html>
